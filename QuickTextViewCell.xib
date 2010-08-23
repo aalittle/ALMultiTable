@@ -12,6 +12,7 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
+			<integer value="13"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -37,7 +38,7 @@
 				<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 			</object>
 			<object class="IBUITableViewCell" id="775555857">
-				<nil key="NSNextResponder"/>
+				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">292</int>
 				<object class="NSMutableArray" key="NSSubviews">
 					<bool key="EncodedWithXMLCoder">YES</bool>
@@ -110,6 +111,7 @@
 					</object>
 				</object>
 				<string key="NSFrameSize">{156, 48}</string>
+				<reference key="NSSuperview"/>
 				<reference key="NSNextKeyView" ref="777900449"/>
 				<reference key="IBUIBackgroundColor" ref="1021774283"/>
 				<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -126,7 +128,7 @@
 						<reference key="source" ref="775555857"/>
 						<reference key="destination" ref="626643328"/>
 					</object>
-					<int key="connectionID">16</int>
+					<int key="connectionID">22</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
@@ -134,7 +136,15 @@
 						<reference key="source" ref="626643328"/>
 						<reference key="destination" ref="775555857"/>
 					</object>
-					<int key="connectionID">17</int>
+					<int key="connectionID">24</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">backgroundView</string>
+						<reference key="source" ref="775555857"/>
+						<reference key="destination" ref="900259801"/>
+					</object>
+					<int key="connectionID">35</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -196,7 +206,7 @@
 					<string>QuickTextViewCell</string>
 					<string>UIResponder</string>
 					<string>QuickTextViewCell</string>
-					<string>{{292, 278}, {156, 48}}</string>
+					<string>{{365, 436}, {156, 48}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -218,7 +228,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">17</int>
+			<int key="maxID">35</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">

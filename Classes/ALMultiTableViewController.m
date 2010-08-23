@@ -187,11 +187,13 @@
     //update the arrays
     NSMutableArray *quickText = [self quickTextAssociatedWithTable:tableView];
         
-    NSString *quickTextValueToMove = [quickText objectAtIndex:fromIndexPath.row];
+    NSString *quickTextValueToMove = [[quickText objectAtIndex:fromIndexPath.row] retain];
     [quickText removeObjectAtIndex:fromIndexPath.row];
     [quickText insertObject:quickTextValueToMove atIndex:toIndexPath.row];
     
     [self writeToPlist:quickText];
+    
+    [quickTextValueToMove release];
 }
  
 
@@ -257,13 +259,13 @@
     if ([theArray isEqual:quickTextActions]) {
         path = [[NSBundle mainBundle] pathForResource:@"QuickTextActions" ofType:@"plist"]; 
     }
-    else if ([theArray isEqual:quickTextActions]) {
+    else if ([theArray isEqual:quickTextPeople]) {
         path = [[NSBundle mainBundle] pathForResource:@"QuickTextPeople" ofType:@"plist"]; 
     }
-    else if ([theArray isEqual:quickTextActions]) {
+    else if ([theArray isEqual:quickTextJoiners]) {
         path = [[NSBundle mainBundle] pathForResource:@"QuickTextJoiners" ofType:@"plist"]; 
     }
-    else if ([theArray isEqual:quickTextActions]) {
+    else if ([theArray isEqual:quickTextThings]) {
         path = [[NSBundle mainBundle] pathForResource:@"QuickTextThings" ofType:@"plist"]; 
     }
     else {
