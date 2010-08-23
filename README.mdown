@@ -1,0 +1,14 @@
+ALMultiTable (author: Andrew Little)
+================================================
+
+ALMultiTable is an iPad 3.2 project that allows a single view controller to manage the rendering of 3 separate table views.  The view is arranged such that each table view represents a column of table view cells.  The table view cells are custom and allow for reordering and for editing of the label.
+
+ALMultiTable is iPad compatible and released under the MIT license.
+
+[![](http://dl.dropbox.com/u/6148369/screenshots/MultiTableView.png)](http://dl.dropbox.com/u/6148369/screenshots/MultiTableView.png)
+
+Usage
+=====
+
+This is not a static library, but instead a demo application.
+
