@@ -23,17 +23,37 @@
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if ((self = [super initWithStyle:style reuseIdentifier:reuseIdentifier])) {
         // Initialization code
+        UIView *accessoryView = [[UIView alloc] initWithFrame:self.frame];
+        accessoryView.backgroundColor = [UIColor redColor];
+        self.accessoryView = accessoryView;
+        
+        [accessoryView release];
         
     }
     return self;
 }
 
+- (void)layoutSubviews {
+    
+    [super layoutSubviews];
+    
+    if (!self.editing) {
+        
+        quickTextField.userInteractionEnabled = NO; 
+        [quickTextField endEditing:YES];
+    }
+    else {
+        quickTextField.userInteractionEnabled = YES; 
+    }
+
+}
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
 
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
 - (void)willTransitionToState:(UITableViewCellStateMask)state {
@@ -47,6 +67,7 @@
     
     textField.backgroundColor = [UIColor whiteColor];
     textField.borderStyle = UITextBorderStyleBezel;
+    //self.editing = NO;
     
     return YES;
 }
@@ -55,6 +76,14 @@
 
     textField.backgroundColor = [UIColor clearColor];
     textField.borderStyle = UITextBorderStyleNone;
+    //self.editing = YES;
+    
+    return YES;
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+ 
+    [textField resignFirstResponder]; 
     
     return YES;
 }

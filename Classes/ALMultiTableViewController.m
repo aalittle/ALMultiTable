@@ -25,6 +25,7 @@
 @synthesize tableCol2;
 @synthesize tableCol3;
 @synthesize tableCol4;
+@synthesize editControl;
 
 @synthesize quickTextJoiners;
 @synthesize quickTextActions;
@@ -38,6 +39,9 @@
     [self.tableCol0 release];
     [self.tableCol1 release];
     [self.tableCol2 release];
+    [self.tableCol3 release];
+    [self.tableCol4 release];
+    [self.editControl release];
     
     [self.quickTextActions release];
     [self.quickTextJoiners release];
@@ -88,11 +92,6 @@
     NSString *path4 = [[NSBundle mainBundle] pathForResource:@"QuickTextCompanies" ofType:@"plist"];        
     quickTextCompanies = [[NSMutableArray alloc] initWithContentsOfFile:path4]; 
 
-    tableCol0.editing = YES;
-    tableCol1.editing = YES;
-    tableCol2.editing = YES;
-    tableCol3.editing = YES;
-    tableCol4.editing = YES;
 }
  
 
@@ -117,6 +116,7 @@
     self.tableCol2 = nil;
     self.tableCol3 = nil;
     self.tableCol4 = nil;
+    self.editControl = nil;
     
     
     
@@ -275,4 +275,29 @@
     
     [theArray writeToFile:path atomically:YES];
 }
+
+
+-(IBAction)touchEditControl {
+    
+    if (tableCol0.editing) {
+        tableCol0.editing = NO;
+        tableCol1.editing = NO;
+        tableCol2.editing = NO;
+        tableCol3.editing = NO;
+        tableCol4.editing = NO;
+        
+        [self.editControl setTitle:@"Edit" forState:UIControlStateNormal];
+    }
+    else {
+        tableCol0.editing = YES;
+        tableCol1.editing = YES;
+        tableCol2.editing = YES;
+        tableCol3.editing = YES;
+        tableCol4.editing = YES;
+        [self.editControl setTitle:@"Done" forState:UIControlStateNormal];
+    }
+    
+}
+
 @end
+

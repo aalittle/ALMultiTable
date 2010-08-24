@@ -16,6 +16,8 @@
     UITableView *tableCol3;
     UITableView *tableCol4;
     
+    UIButton *editControl;
+    
 @private
     //Data for the demo
     NSMutableArray *quickTextActions;
@@ -31,12 +33,16 @@
 @property (nonatomic, retain) IBOutlet UITableView *tableCol3;
 @property (nonatomic, retain) IBOutlet UITableView *tableCol4;
 
+@property (nonatomic, retain) IBOutlet UIButton *editControl;
+
+
 @property (nonatomic, retain) NSMutableArray *quickTextActions;
 @property (nonatomic, retain) NSMutableArray *quickTextPeople;
 @property (nonatomic, retain) NSMutableArray *quickTextJoiners;
 @property (nonatomic, retain) NSMutableArray *quickTextThings;
 @property (nonatomic, retain) NSMutableArray *quickTextCompanies;
 
+-(IBAction)touchEditControl;
 
 @end
 
